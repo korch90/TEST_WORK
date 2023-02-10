@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ANDRIAN KORCHINSKYI</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <div class="range_wrapper">
+        <div class="range_input">
+          <label id="label_storage" for="storage">Storage: 100 GB</label>
+          <input
+            type="range"
+            id="storage"
+            name="storage"
+            value="0"
+            min="0"
+            max="1000"
+            oninput="handle_storage_range(value)"
+          />
+        </div>
+
+        <div class="range_input">
+          <label id="label_transfer" for="transfer">Transfer: 400 GB</label>
+          <input
+            type="range"
+            id="transfer"
+            name="transfer"
+            min="0"
+            max="1000"
+            value="0"
+            oninput="handle_transfer_range(value)"
+          />
+        </div>
+      </div>
+
+      <div class="diagram">
+        <div class="line"></div>
+
+        <div class="backblaze_wrapper diagram_item">
+          <div class="name_icon_container">
+            backblaze
+            <div class="icon">icon</div>
+          </div>
+          <div id="percent_line_backblaze" class="percent_line">.</div>
+          <div class="percent_line_" id="percent_line_backblaze$"></div>
+        </div>
+
+        <div class="bunny_wrapper diagram_item">
+          <div class="name_icon_container">
+            bunny
+            <div class="wrapper_swich" style="font-size: 10px">
+              <div class="circle_hdd circle"></div>
+              <div class="hdd">HDD</div>
+              <div class="circle_ssd circle"></div>
+              <div class="ssd">SSD</div>
+            </div>
+            <div class="icon">icon</div>
+          </div>
+          <div id="percent_line_bunny" class="percent_line">.</div>
+          <div id="percent_line_bunny$" class="percent_line_"></div>
+        </div>
+
+        <div class="scaleway_wrapper diagram_item">
+          <div class="name_icon_container">
+            scaleway
+            <div class="wrapper_swich" style="font-size: 10px">
+              <div class="circle_multi circle"></div>
+              <div class="hdd">multi</div>
+              <div class="circle_single circle"></div>
+              <div class="ssd">single</div>
+            </div>
+            <div class="icon">icon</div>
+          </div>
+          <div id="percent_line_scaleway" class="percent_line">.</div>
+          <div id="percent_line_scaleway$" class="percent_line_"></div>
+        </div>
+
+        <div class="vultr_wrapper diagram_item">
+          <div class="name_icon_container">
+            vultr
+            <div class="icon">icon</div>
+          </div>
+          <div id="percent_line_vultr" class="percent_line">.</div>
+          <div id="percent_line_vultr$" class="percent_line_"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script src="main.js"></script>
+</html>
