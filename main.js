@@ -22,6 +22,8 @@ circle_multi.addEventListener("click", multi);
 
 const transfer = document.getElementById("transfer");
 const storage = document.getElementById("storage");
+let handle_value_storage=0
+let handle_value_transfer=0
 
 let backblaze_now_price_storage = 0;
 let bunny_now_price_storage = 0;
@@ -45,22 +47,31 @@ function hdd() {
   circle_hdd.style.backgroundColor = "black";
   circle_ssd.style.backgroundColor = "white";
   bunny_hhd = true;
+  handle_storage_range(handle_value_storage)
+  handle_transfer_range(handle_value_transfer)
+
 }
 function ssd() {
   circle_hdd.style.backgroundColor = "white";
   circle_ssd.style.backgroundColor = "black";
   bunny_hhd = false;
+  handle_storage_range(handle_value_storage)
+  handle_transfer_range(handle_value_transfer)
 
 }
 function multi() {
   circle_multi.style.backgroundColor = "black";
   circle_single.style.backgroundColor = "white";
   scaleway_multi = true;
+  handle_storage_range(handle_value_storage)
+  handle_transfer_range(handle_value_transfer)
 }
 function single() {
   circle_multi.style.backgroundColor = "white";
   circle_single.style.backgroundColor = "black";
   scaleway_multi = false;
+  handle_storage_range(handle_value_storage)
+  handle_transfer_range(handle_value_transfer)
 }
 
 single();
@@ -189,6 +200,8 @@ function handle_storage_range(value) {
   calc_bunny(value, "storage");
   calc_scaleway(value, "storage");
   show_cheeper();
+  handle_value_storage=value
+  // console.log(handle_value_storage)
 }
 
 function handle_transfer_range(value) {
@@ -197,6 +210,8 @@ function handle_transfer_range(value) {
   calc_bunny(value, "transfer");
   calc_scaleway(value, "transfer");
   show_cheeper();
+  handle_value_transfer=value
+  // console.log(handle_value_transfer)
 }
 
 function show_cheeper() {
